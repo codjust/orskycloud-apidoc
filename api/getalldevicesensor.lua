@@ -1,3 +1,49 @@
+--[[
+@apiDefine Response
+@apiParam(response){string} Message 响应信息，接口请求success或failed返回相关信息
+@apiParam(response){bool} Successful 是否成功。通过该字段可以判断请求是否到达.
+--]]
+--[[
+@api {POST} http://hcwzq.cn/api/getalldevicesensor.json?uid=* getalldevicesensor
+@apiName getalldevicesensor
+@apiGroup All
+@apiVersion 1.0.1
+@apiDescription 获取用户所有设备和传感器信息
+
+@apiParam {string} uid 唯一ID，32位md5值
+@apiParam {json} response 响应数据
+@apiUse Response
+
+
+@apiParamExample Example:
+POST http://hcwzq.cn/api/getalldevicesensor.json?uid=c81e728d9d4c2f636f067f89cc14862c
+
+@apiSuccessExample {json} Success-Response:
+HTTP/1.1 200 OK
+{"1":[{
+"createTime":"2016-12-19 23:07:12",
+"deviceName":"Test1",
+"description":"description1",
+"Sensor":[{
+"createTime":"2016-9-12 00:00:00",
+"unit":"kg",
+"name":"weight",
+"designation":"体重"}]
+}],
+"Message":"success",
+"Successful":true
+}
+
+@apiErrorExample {json} Error-Response:
+HTTP/1.1 200 OK  
+{
+    "Successful":false,
+    "Message": "Device not create yet"
+}
+
+--]]
+
+
 -- 获取用户所有设备和传感器信息,没有返回提示信息
 
 -- curl '127.0.0.1/api/getalldevicesensor.json?uid=001'
