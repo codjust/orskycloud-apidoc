@@ -1,3 +1,52 @@
+--[[
+@apiDefine Response
+@apiParam(response){string} Message 响应信息，接口请求success或failed返回相关信息
+@apiParam(response){bool} Successful 是否成功。通过该字段可以判断请求是否到达.
+--]]
+--[[
+@apiDefine Request
+@apiParam(request){string} name  传感器标示
+@apiParam(request){string} unit  单位
+@apiParam(request){string} designation  传感器名称
+--]]
+--[[
+@api {POST} http://hcwzq.cn/api/addnewsensor.json?uid=***&did=***  addnewsensor
+@apiName addnewsensor
+@apiGroup All
+@apiVersion 1.0.1
+@apiDescription 添加新传感器
+
+@apiParam {string} uid 唯一用户ID，32位md5值
+@apiParam {string} did 唯一设备ID，32位md5值
+@apiParam {json} request 请求体，需要添加的传感器信息插入到请求体中  
+@apiUse Request
+@apiParam {json} response 响应数据
+@apiUse Response
+
+
+@apiParamExample Example:
+POST http://hcwzq.cn/api/addnewsensor.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3
+{
+    "name": "TestSensor",
+    "unit" : "M",
+    "designation":"测试传感器"
+}
+
+@apiSuccessExample {json} Success-Response:
+HTTP/1.1 200 OK
+{
+"Message":"add sensor success",
+"Successful":true
+}
+
+@apiErrorExample {json} Error-Response:
+HTTP/1.1 200 OK  
+{
+    "Successful":false,
+    "Message": "sensor alreadey exist"
+}
+
+--]]
 local common = require "lua.comm.common"
 local redis  = require "lua.db_redis.db_base"
 local red    = redis:new()
