@@ -3,9 +3,9 @@
 
 Contents
 =========
-* [Description](#Description)
-* [Install apidoc tool](#Install apidoc tool)
-* [Edit orskycloud API document](# Edit orskycloud API document)
+* [Description](#description)
+* [Install apidoc tool](#install-apidoc-tool)
+* [Edit orskycloud API document](#edit-orskycloud-api-document)
 
 Description
 =========
@@ -21,17 +21,17 @@ Install apidoc tool
 ```shell
     sudo apt-get install nodejs
 ```
-如果终端输入:node -v会输出版本号则说明安装成功。
+如果终端输入:node -v会输出版本号则说明安装成功。<br>
 (3)安装apidoc工具
 官网：[http://apidocjs.com](http://apidocjs.com)
 ```shell
     npm install apidoc -g
 ```
-一般默认会安装在：/usr/local/lib/node_modules/apidoc 目录下。
+一般默认会安装在：/usr/local/lib/node_modules/apidoc 目录下。<br>
 (4)测试apidoc
 ```shell
-    #cd /usr/local/lib/node_modules/apidoc
-    #apidoc -i explame -o doc
+    cd /usr/local/lib/node_modules/apidoc
+    apidoc -i explame -o doc
 ```
 查看doc目录，里面会生成静态的html文件，直接浏览器打开即可。
 
@@ -41,10 +41,10 @@ Edit orskycloud API document
 =======
 (1)准备好lua文件和json配置文件
 ```shell
-    #mkdir orskycloud-apidoc
-    #cd orskycloud-apidoc
-    #mkdir api doc
-    #touch apidoc.json
+    mkdir orskycloud-apidoc
+    cd orskycloud-apidoc
+    mkdir api doc
+    touch apidoc.json
 ```
 apidoc.json:
 ```json
@@ -52,7 +52,8 @@ apidoc.json:
     "name":"orskycloud API",                                                                                                               
     "version":"1.0.0",                                                                                                 
     "title":"ORSkyCloud API Document",
-    "description":"ORSkyCloud 开发者指南"                                                                                                   }                                                                                                                                          
+    "description":"ORSkyCloud开发者指南"
+    }                                                                                                                                          
 ```
 
 api/test.lua
