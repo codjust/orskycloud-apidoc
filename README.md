@@ -9,7 +9,7 @@ Contents
 
 Description
 =========
-使用apidoc工具为orskycloud编写自动化API文档。
+使用apidoc工具为orskycloud编写自动化API文档。<br>
 [Back to TOC](#contents)
 
 Install apidoc tool
@@ -34,7 +34,7 @@ Install apidoc tool
     cd /usr/local/lib/node_modules/apidoc
     apidoc -i explame -o doc
 ```
-查看doc目录，里面会生成静态的html文件，直接浏览器打开即可。
+查看doc目录，里面会生成静态的html文件，直接浏览器打开即可。<br>
 [Back to TOC](#contents)
 
 
@@ -104,7 +104,7 @@ HTTP/1.1 200 OK
 
 --]]
 ```
-注意：lua的注释要用--[[ --]]
+注意：lua的注释要用--[[ --]]<br>
 [Back to TOC](#contents)
 
 
