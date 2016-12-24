@@ -1,6 +1,10 @@
-
 --[[
-@api {POST} hcwzq.cn/api/getDeviceData.json?uid=*&did=*[&StartTime=*][&EndTime=*] getDeviceData
+@apiDefine Response
+@apiParam(response){string} Message 响应信息，接口请求success或failed返回相关信息
+@apiParam(response){bool} Successful 是否成功。通过该字段可以判断请求是否到达.
+--]]
+--[[
+@api {POST} http://hcwzq.cn/api/getDeviceData.json?uid=*&did=*[&StartTime=*][&EndTime=*] getDeviceData
 @apiName getDeviceData
 @apiGroup All
 @apiVersion 1.0.1
@@ -8,11 +12,16 @@
 
 @apiParam {string} uid 唯一ID值，32位md5
 @apiParam {string} did 唯一设备ID值，32位md5
-@apiParam [{string}] [StartTime] 选择数据区间，开始时间，默认：2015-09-01 00:00:00，格式：2015-09-01 00:00:00
-@apiParam [{string}] [EndTime] 选择数据区间，结束时间，默认：当前时间，格式：2015-09-01 00:00:00
+@apiParam {string} [StartTime] 选择数据区间，开始时间，默认：2015-09-01 00:00:00，格式：2015-09-01 00:00:00
+@apiParam {string} [EndTime] 选择数据区间，结束时间，默认：当前时间，格式：2015-09-01 00:00:00
+
+
+@apiParam {json} response 响应数据
+@apiUse Response
+
 
 @apiParamExample Example:
-POST hcwzq.cn/api/getDeviceData.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3&StartTime=2016-09-01 00:00:00&EndTime=2016-10-01 00:00:00
+POST http://hcwzq.cn/api/getDeviceData.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3&StartTime=2016-09-01 00:00:00&EndTime=2016-10-01 00:00:00
 
 @apiSuccessExample {json} Success-Response:
 HTTP/1.1 200 OK
@@ -26,6 +35,12 @@ HTTP/1.1 200 OK
 "Successful":true
 }
 
+@apiErrorExample {json} Error-Response:
+HTTP/1.1 200 OK  
+{
+    "Successful":false,
+    "Message": "uid error or did error or not exist"
+}
 
 --]]
 
