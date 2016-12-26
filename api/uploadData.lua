@@ -25,7 +25,7 @@
 
 @apiParamExample Example:
 POST http://hcwzq.cn/api/uploadData.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3
-{
+[
     {
         "sensor": "weight",
         "value" : 59
@@ -34,7 +34,7 @@ POST http://hcwzq.cn/api/uploadData.json?uid=c81e728d9d4c2f636f067f89cc14862c&di
         "sensor": "height",
         "value": "12"
     }
-}
+]
 
 @apiSuccessExample {json} Success-Response:
 HTTP/1.1 200 OK

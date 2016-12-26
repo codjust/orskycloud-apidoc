@@ -437,7 +437,7 @@
       "examples": [
         {
           "title": "Example:",
-          "content": "POST http://hcwzq.cn/api/uploadData.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3\n{\n    {\n        \"sensor\": \"weight\",\n        \"value\" : 59\n    },\n    {\n        \"sensor\": \"height\",\n        \"value\": \"12\"\n    }\n}",
+          "content": "POST http://hcwzq.cn/api/uploadData.json?uid=c81e728d9d4c2f636f067f89cc14862c&did=eccbc87e4b5ce2fe28308fd9f2a7baf3\n[\n    {\n        \"sensor\": \"weight\",\n        \"value\" : 59\n    },\n    {\n        \"sensor\": \"height\",\n        \"value\": \"12\"\n    }\n]",
           "type": "json"
         }
       ]
